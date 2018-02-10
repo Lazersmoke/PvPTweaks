@@ -5,7 +5,8 @@ tweaks:
     - FROST_WALKER
   GeneralTweaks:
     healthRegen: 1.0
-    regenDelay: 4000
+    exhaustionCost: 6.0
+    regenDelay: 100
   PearlTweaks:
     #cooldown in ticks, 300 = 15 seconds
     cooldown: 300
