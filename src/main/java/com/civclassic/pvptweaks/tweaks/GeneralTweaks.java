@@ -30,7 +30,9 @@ public class GeneralTweaks extends Tweak {
 		Bukkit.getServer().getWorlds().forEach(w -> w.setGameRuleValue("naturalRegeneration","false"));
 		bukkitTaskId = Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin(), () -> {
 			Bukkit.getOnlinePlayers().forEach(p -> {
-				if(p.getFoodLevel() >= 18 && p.getHealth() < p.getMaxHealth()){
+				// If they are healed with health <= 0, they turn sideways and red
+				// and can still walk around.
+				if(p.getFoodLevel() >= 18 && p.getHealth() < p.getMaxHealth() && !(p.getHealth() <= 0)){
 					p.setHealth(Math.min(p.getMaxHealth(),p.getHealth() + healthRegen));
 					p.setExhaustion(p.getExhaustion() + exhaustionCost);
 				}
