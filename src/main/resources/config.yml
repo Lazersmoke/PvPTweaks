@@ -43,3 +43,7 @@ tweaks:
     prot_mitigation: 7
     prot_scale: 0.5
     linear_prot: true
+  ProjectileTweaks:
+    tweakPearls: true
+    tweakPots: true
+    tweakAll: false
